@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import AppLayout from '../components/layouts/AppLayout';
 
 function Logement() {
     return (
-        <div className="logement">
-            <Header />
-            <h1>Logement</h1>
-        </div>
+        <>
+            <AppLayout>
+                <h1>Home</h1>
+            </AppLayout>
+        </>
     );
 }
 

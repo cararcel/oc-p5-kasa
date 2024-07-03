@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import AppLayout from '../components/layouts/AppLayout';
 
 function Home() {
     return (
-        <div className="Home">
-            <Header />
-            <h1>Home</h1>
-        </div>
+        <>
+            <AppLayout>
+                <h1>Home</h1>
+            </AppLayout>
+        </>
     );
 }
 

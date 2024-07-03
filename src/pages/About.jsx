@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import AppLayout from '../components/layouts/AppLayout';
 
 function About() {
     return (
-        <div>
-            <Header />
-            <h1>About page</h1>
-        </div>
+        <>
+            <AppLayout>
+                <h1>About</h1>
+            </AppLayout>
+        </>
     );
 }
 
