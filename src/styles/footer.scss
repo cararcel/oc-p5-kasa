@@ -14,4 +14,7 @@
     color: white;
     width: 133px;
     text-align: center;
+    @media (min-width: 747px){
+        width: auto;
+    }
 }

@@ -10,6 +10,11 @@
     color: white;
     padding: 0 19.71px 15px;
 
+    @media (min-width: 747px){
+        height: 340px;
+        width: 340px;
+    }
+
     .card-title{
         z-index: 1;
         margin: 0;
@@ -28,3 +33,4 @@
         ;
     }
 }
+
