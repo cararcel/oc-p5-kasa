@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Header from '../components/Header';
 
 function Logement() {
     return (
         <div className="logement">
-            <Nav />
+            <Header />
             <h1>Logement</h1>
         </div>
     );

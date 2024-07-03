@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Header from './Header';
 
 function Error() {
     return (
         <div>
-            <Nav />
+            <Header />
             <h1>404</h1>
             <p>Oups! La page que vous demandez n'existe pas.</p>
         </div>

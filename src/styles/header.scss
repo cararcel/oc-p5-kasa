@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px ;
+}
+
+.header-logo img{
+    height: 46px;
+}
+
+.header-nav{
+ display: flex;
+ gap: 26px;
+}
+
+.header-nav_link{
+    text-decoration: none;
+    color: black;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.header-nav_link:hover{
+    text-decoration: underline;
+}
+
+@media (min-width: 747px){
+    .header{
+        margin: 45px 100px ;
+    }
+    .header-nav{
+        gap: 57px;
+       }
+    
+       .header-nav_link{
+        font-size: 1.5rem;
+        text-transform: capitalize;
+    }
+}
