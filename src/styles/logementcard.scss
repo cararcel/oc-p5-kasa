@@ -1,0 +1,65 @@
+.logement-card {
+    background-color: rgba(255, 96, 96, 1);
+    height: 255px;
+    width: 335px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    padding: 0 19.71px 15px;
+    margin: 0;
+    &::before {
+        z-index: 2;
+        content: ' ';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(10, 10, 10, 0) 42%,
+            rgba(4, 4, 4, 0.205) 99.99%,
+            rgba(0, 0, 0, 0.5) 100%
+        );
+    }
+
+    @media (min-width: 747px) {
+        height: 340px;
+        width: 340px;
+    }
+}
+
+.logement-card_img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.logement-card_title {
+    position: absolute;
+    z-index: 3;
+    margin: 0;
+    font-size: 1.125rem;
+    left: 20px;
+    bottom: 15px;
+    width: 60%;
+}
+
+.logement-card_location {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 0;
+}

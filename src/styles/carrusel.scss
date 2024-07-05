@@ -1,0 +1,50 @@
+.carrusel {
+    min-width: 335px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    // @media (min-width: 747px) {
+    //     width: 1240px;
+    // }
+}
+
+.carrusel-img {
+    width: 100%;
+    object-fit: cover;
+    @media (min-width: 747px) {
+        height: 415px;
+    }
+}
+
+.carrusel-arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    svg {
+        fill: currentColor;
+        width: 12px;
+    }
+    @media (min-width: 747px) {
+        svg {
+            width: 47px;
+        }
+    }
+    &.right {
+        right: 6px;
+    }
+    &.left {
+        left: 6px;
+    }
+}
+
+.carrusel-count {
+    display: none;
+    @media (min-width: 747px) {
+        display: inherit;
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        color: white;
+        font-size: 18px;
+    }
+}

@@ -1,7 +1,9 @@
 import React from 'react';
 import AppLayout from '../components/layouts/AppLayout';
-import Card from '../components/Card';
+import { Link } from 'react-router-dom';
 import '../styles/home.scss';
+import logements from '../logements.json';
+import LogementCard from '../components/LogementCard';
 
 function Home() {
     return (
@@ -14,12 +16,19 @@ function Home() {
                 </div>
 
                 <div className="gallery">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    {logements.map((logement) => {
+                        return (
+                            <Link
+                                className="header-nav_link"
+                                to={`/logement/${logement.id}`}
+                            >
+                                <LogementCard
+                                    key={logement.id}
+                                    logement={logement}
+                                />
+                            </Link>
+                        );
+                    })}
                 </div>
             </AppLayout>
         </>
