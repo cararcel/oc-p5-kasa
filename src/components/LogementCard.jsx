@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/logementcard.scss';
+import '../styles/logementCard.scss';
 
 function LogementCard({ logement }) {
     return (
