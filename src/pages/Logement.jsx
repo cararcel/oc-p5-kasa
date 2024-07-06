@@ -3,15 +3,18 @@ import AppLayout from '../components/layouts/AppLayout';
 import '../styles/logement.scss';
 import Carrusel from '../components/Carrusel';
 import logementsData from '../logements.json';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Collapsible from '../components/Collapsible';
 import Star from '../components/icons/Star';
-import Profile from '../assets/profile.png';
 
 function Logement() {
     let params = useParams();
 
     const logement = logementsData.find((l) => l.id === params.id);
+
+    if (!logement) {
+        return <Navigate to="/not-found" />;
+    }
 
     let ratings = new Array(5).fill(false).fill(true, 0, logement.rating);
 
