@@ -1,7 +1,7 @@
 .logement-card {
     background-color: rgba(255, 96, 96, 1);
     height: 255px;
-    width: 335px;
+    min-width: 335px;
     position: relative;
     display: flex;
     flex-direction: column;

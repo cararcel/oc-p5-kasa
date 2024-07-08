@@ -21,11 +21,9 @@ function Home() {
                             <Link
                                 className="header-nav_link"
                                 to={`/logement/${logement.id}`}
+                                key={`logement-link-${logement.id}`}
                             >
-                                <LogementCard
-                                    key={logement.id}
-                                    logement={logement}
-                                />
+                                <LogementCard logement={logement} />
                             </Link>
                         );
                     })}

@@ -1,11 +1,11 @@
 import React from 'react';
 import AppLayout from '../components/layouts/AppLayout';
 import '../styles/logement.scss';
-import Carrusel from '../components/Carrusel';
 import logementsData from '../logements.json';
 import { Navigate, useParams } from 'react-router-dom';
 import Collapsible from '../components/Collapsible';
 import Star from '../components/icons/Star';
+import Carousel from '../components/Carousel';
 
 function Logement() {
     let params = useParams();
@@ -21,7 +21,20 @@ function Logement() {
     return (
         <>
             <AppLayout>
-                <Carrusel pictures={logement.pictures} />
+                {/* <Carousel pictures={logement.pictures} /> */}
+                <Carousel>
+                    {logement.pictures.map((picture, index) => {
+                        return (
+                            <img
+                                className="logement-img"
+                                key={`logement-picture-${index}`}
+                                src={picture}
+                                alt=""
+                            />
+                        );
+                    })}
+                </Carousel>
+
                 <div className="logement">
                     <section className="logement-top">
                         <header className="logement-header">

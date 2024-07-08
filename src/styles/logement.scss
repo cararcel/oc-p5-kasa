@@ -1,6 +1,19 @@
 .logement {
     font-family: montserrat;
 }
+
+.logement-img {
+    width: 100%;
+    object-fit: cover;
+    height: 255px;
+    object-position: 28% 50%;
+
+    @media (min-width: 747px) {
+        height: 415px;
+        object-position: center;
+    }
+}
+
 .logement-top {
     display: flex;
     flex-direction: column;
@@ -20,6 +33,7 @@
     font-size: 1.125;
     @media (min-width: 747px) {
         font-size: 36px;
+        margin-bottom: 5px;
     }
 }
 
@@ -136,5 +150,10 @@
     li {
         list-style: none;
         font-size: 12px;
+    }
+    @media (min-width: 747px) {
+        li {
+            font-size: 18px;
+        }
     }
 }
