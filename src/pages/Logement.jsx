@@ -8,7 +8,7 @@ import Star from '../components/icons/Star';
 import Carousel from '../components/Carousel';
 
 function Logement() {
-    let params = useParams();
+    const params = useParams();
 
     const logement = logementsData.find((l) => l.id === params.id);
 
@@ -16,12 +16,12 @@ function Logement() {
         return <Navigate to="/not-found" />;
     }
 
-    let ratings = new Array(5).fill(false).fill(true, 0, logement.rating);
+    //use effect or compute
+    const ratings = new Array(5).fill(false).fill(true, 0, logement.rating);
 
     return (
         <>
             <AppLayout>
-                {/* <Carousel pictures={logement.pictures} /> */}
                 <Carousel>
                     {logement.pictures.map((picture, index) => {
                         return (
