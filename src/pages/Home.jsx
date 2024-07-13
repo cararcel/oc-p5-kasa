@@ -1,11 +1,27 @@
 import React from 'react';
 import AppLayout from '../components/layouts/AppLayout';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import '../styles/home.scss';
-import logements from '../logements.json';
 import LogementCard from '../components/LogementCard';
 
+export async function loader() {
+    try {
+        const response = await fetch('/logements.json');
+
+        if (!response.ok) {
+            throw new Response('Not found', { status: 404 });
+        }
+
+        return response.json();
+    } catch (reason) {
+        console.error(`Une erreur est survenue: ${reason}`);
+        throw new Response('Not found', { status: 404 });
+    }
+}
+
 function Home() {
+    const logements = useLoaderData();
+
     return (
         <>
             <AppLayout>

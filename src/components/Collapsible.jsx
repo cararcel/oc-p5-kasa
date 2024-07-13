@@ -13,6 +13,7 @@ const Collapsible = ({ open, children, title }) => {
         setIsOpen((prev) => !prev);
     };
 
+    //Updating state based on previous state from an Effect
     useEffect(() => {
         if (isOpen) {
             setHeight(ref.current?.getBoundingClientRect().height);

@@ -1,22 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.scss';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Logement from './pages/Logement';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home, { loader as homeLoader } from './pages/Home';
+import Logement, { loader as logementLoader } from './pages/Logement';
 import About from './pages/About';
 import Error from './pages/Error';
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home />,
+        loader: homeLoader,
+        errorElement: <Error />,
+    },
+    {
+        path: '/logement/:id',
+        element: <Logement />,
+        loader: logementLoader,
+        errorElement: <Error />,
+    },
+    {
+        path: '/a-propos',
+        element: <About />,
+        errorElement: <Error />,
+    },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/logement/:id" element={<Logement />} />
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<Error />} />
-            </Routes>
-        </Router>
+        <RouterProvider router={router} />
     </React.StrictMode>
 );

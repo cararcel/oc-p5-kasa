@@ -14,7 +14,7 @@ function Header() {
                 <Link className="header-nav_link" to="/">
                     Accueil
                 </Link>
-                <Link className="header-nav_link" to="/about">
+                <Link className="header-nav_link" to="/a-propos">
                     A Propos
                 </Link>
             </nav>

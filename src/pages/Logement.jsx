@@ -1,20 +1,35 @@
 import React from 'react';
 import AppLayout from '../components/layouts/AppLayout';
 import '../styles/logement.scss';
-import logementsData from '../logements.json';
-import { Navigate, useParams } from 'react-router-dom';
+import { redirect, useLoaderData } from 'react-router-dom';
 import Collapsible from '../components/Collapsible';
 import Star from '../components/icons/Star';
 import Carousel from '../components/Carousel';
 
-function Logement() {
-    const params = useParams();
+export async function loader({ params }) {
+    try {
+        const response = await fetch('/logements.json');
 
-    const logement = logementsData.find((l) => l.id === params.id);
+        if (!response.ok) {
+            throw new Response('Not found', { status: 404 });
+        }
 
-    if (!logement) {
-        return <Navigate to="/not-found" />;
+        const logements = await response.json();
+        const logement = logements.find((l) => l.id === params.id);
+
+        if (!logement) {
+            return redirect('/not-found');
+        }
+
+        return logement;
+    } catch (reason) {
+        console.error(`Une erreur est survenue: ${reason}`);
+        throw new Response('Not found', { status: 404 });
     }
+}
+
+function Logement() {
+    const logement = useLoaderData();
 
     //use effect or compute
     const ratings = new Array(5).fill(false).fill(true, 0, logement.rating);
