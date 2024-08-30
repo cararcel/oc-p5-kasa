@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
+Code du projet 3 web developpeur.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## About this project
+
+Front end of a web application for a real estate agency using React. A professional designer has already taken care of the visual design using Figmato make the mockup as a reference.
 
 ## Available Scripts
 
